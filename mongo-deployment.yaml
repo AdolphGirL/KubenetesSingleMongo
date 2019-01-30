@@ -1,7 +1,8 @@
 apiVersion: apps/v1
-Kind: Deployment
+kind: Deployment
 metadata:
   name: mongodb-deployment
+  namespace: mongospace
   labels:
     app: mongodb-deployment
 spec:
