@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodbclient-service
+  namespace: mongospace
+  labels:
+    app: mongodbclient-service
+spec:
+  ports:
+  - name: mongoclient-http
+    protocol: TCP
+    port: 3000
+    targetPort: 3000  
+  # 指定Service的Selector，來代理Pod的Label
+  selector:
+    app: mongoclient-pod
+  externalIPs:
+  - 172.16.32.198
