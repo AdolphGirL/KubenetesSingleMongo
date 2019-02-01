@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongoclient-pod
+  namespace: mongospace
+  labels:
+    app: mongoclient-pod
+spec:
+  containers:
+  - name: mongoclient
+    image: mongoclient/mongoclient
+    ports:
+    - containerPort: 3000
+      
